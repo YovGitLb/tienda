@@ -1,6 +1,7 @@
 <?php
 include 'global/Config.php';
 include 'global/conexion.php';
+include 'carrito.php';
 
 
 ?>
@@ -42,8 +43,17 @@ include 'global/conexion.php';
 <div class="container">
 <br>
 <div class="alert alert-success">
-    Pantalla de mensaje....
-    <?php print_r($_POST);?>
+    
+   <!--- Pantalla de mensaje....
+    <?php print_r($_POST);?>-------------------------->
+
+
+
+    <?php echo $mensaje;?>
+
+
+
+
 <a href="" class="badge badge-success">Ver Carrito</a>
 
 </div>
@@ -84,12 +94,12 @@ include 'global/conexion.php';
                         <input type="text" name="cantidad" id="cantidad" value="<?php echo openssl_encrypt(1,COD,KEY);?>">
 
 
-                        <button class="btn btn-primary" name="btnAccion" value="Agregar" type="button">Agrregar al carrito</button>
+                        <button class="btn btn-primary" name="btnAccion" value="Agregar" type="submit">Agregar al carritoo</button>
                 
                        </form>
 
                         
-            
+        
             </div>
         </div>
     
