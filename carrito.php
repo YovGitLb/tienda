@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $mensaje="";
 
 //desencriptando valores y validando la informacion en el carrito de compras al hacer POST
@@ -14,6 +16,7 @@ if(isset($_POST['btnAccion'])){
                  
                 $ID=openssl_decrypt($_POST['id'],COD,KEY);
                 $mensaje.="ok Id correcto ".$ID."</br>";
+                
 
             }
             else{
@@ -49,6 +52,37 @@ if(isset($_POST['btnAccion'])){
             } else{
                 $mensaje.="Algo pasa con el precio"."</br>";break;
             }
+
+
+
+                //--almacenando informacion en el carrito
+
+                if(!isset($_SESSION['CARRITO'])){
+                    $producto=array(
+                        'ID'=>$ID,
+                        'NOMBRE'=>$NOMBRE,
+                        'CANTIDAD'=>$CANTIDAD,
+                        'PRECIO'=>$PRECIO
+                    );
+
+                 $_SESSION['CARRITO'][0]=$producto;       
+
+                 }else{
+                    $NumeroProductos=count($_SESSION['CARRITO']);
+                    $producto=array(
+                        'ID'=>$ID,
+                        'NOMBRE'=>$NOMBRE,
+                        'CANTIDAD'=>$CANTIDAD,
+                        'PRECIO'=>$PRECIO
+                    );
+
+                 $_SESSION['CARRITO'][$NumeroProductos]=$producto;     
+
+
+                 }
+                 $mensaje=print_r($_SESSION,true);
+
+
         break;
     }
 
