@@ -76,29 +76,38 @@ if(isset($_POST['btnAccion'])){
                         'PRECIO'=>$PRECIO
                     );
 
-                 $_SESSION['CARRITO'][$NumeroProductos]=$producto;     
+                    
 
+                 $_SESSION['CARRITO'][$NumeroProductos]=$producto;   
+                 
+                
 
+                  
                  }
+                 
+
                  $mensaje=print_r($_SESSION,true);
+
+                 
+                 
+
+                 
 
 
         break;
+        
+        
     }
+    
 
 
-
-
+     
 
 
 
 }
 
-
-
-
-
-
-
+//session_destroy();
 
 ?>
+

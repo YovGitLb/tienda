@@ -10,8 +10,7 @@ include 'templates/cabecera.php'; //incluimos el archivo donde esta la cabecera
 <br>
 <div class="alert alert-success">
     
-   <!--- Pantalla de mensaje....
-    <?php print_r($_POST);?>-------------------------->
+   <!--- Pantalla de mensaje <?php print_r($_POST);?>-------------------------->
 
 
 
