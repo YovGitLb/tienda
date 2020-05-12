@@ -95,6 +95,32 @@ if(isset($_POST['btnAccion'])){
 
 
         break;
+
+        case "Eliminar":
+            if(is_numeric(openssl_decrypt($_POST['id'],COD,KEY))){
+                 
+                $ID=openssl_decrypt($_POST['id'],COD,KEY);
+               foreach($_SESSION["CARRITO"] as $indice=>$producto)
+               {
+                    if($producto['ID']==$ID)
+                    {
+                        unset($_SESSION["CARRITO"][$indice]);
+                        echo "<script>alert('Elemento borrado...');</script>";   
+
+                    }
+
+               }
+                
+
+            }
+            else{
+
+                $mensaje.="No se pudo registrar el pedido".$ID."</br>";
+
+            }  
+
+
+        break;
         
         
     }
