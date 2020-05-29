@@ -7,21 +7,26 @@ include 'templates/cabecera.php'; //incluimos el archivo donde esta la cabecera
 
 ?>
 
+
+
 <br>
+
+<?php if($mensaje=""){ ?>
+
 <div class="alert alert-success">
+
+  <?php echo $mensaje; ?>
     
    <!--- Pantalla de mensaje <?php print_r($_POST);?>-------------------------->
 
 
-
-    <?php echo $mensaje;?>
-
-
-
-
-<a href="" class="badge badge-success">Ver Carrito</a>
+<a href="mostrarCarrito.php" class="badge badge-success">Ver Carrito</a>
 
 </div>
+
+<?php }?>
+
+
 
 <div class="row">
 
